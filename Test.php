@@ -8,7 +8,7 @@
     <body>
         <pre>
             <?php
-            //require_once './index.php';
+            require_once './BDConect.php';
             
             class Prod {
 
@@ -65,9 +65,6 @@
             echo "Preço: " . $obj->getValue() . "</br>";
             echo "Quantia: " . $obj->getAmt() . "</br>";
             
-            
-            $con = mysqli_connect("localhost", "root", "", "test1");
-            
             $sql = "insert into produto values". "(" . $_POST["amount"] . ", '". $_POST["name"] . "' , " . $_POST["value"] . ");";
            
             
@@ -80,6 +77,8 @@
                 echo 'n foi';
             }
            
+            mysqli_close($con);
+            
             ?>
         </pre>
     </body>
