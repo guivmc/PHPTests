@@ -11,6 +11,34 @@ and open the template in the editor.
     </head>
     <body>
         
+          <?php
+        
+            $con = mysqli_connect("localhost", "root", "", "test1");
+            
+            if($con)
+            {
+                echo 'foi';
+            }
+            else
+            {
+                echo 'n foi';
+                die();
+            }
+            
+            $sql = "insert into produto values (4, 'piriquito', 100.50);";
+           
+            
+             if(mysqli_query($con, $sql))
+            {
+                echo 'foi';
+            }
+            else
+            {
+                echo 'n foi';
+            }
+        ?>
+        
+        
         <form method="post" action="Test.php">
             <input placeholder="Nome" name="name"/>
             <input placeholder="Descrição" name="description"/>
