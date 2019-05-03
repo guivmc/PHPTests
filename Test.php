@@ -64,6 +64,21 @@
             echo "Descr.: " . $obj->getDesc() . "</br>";
             echo "Preço: " . $obj->getValue() . "</br>";
             echo "Quantia: " . $obj->getAmt() . "</br>";
+            
+            
+            $con = mysqli_connect("localhost", "root", "", "test1");
+            
+            $sql = "insert into produto values". "(" . $_POST["amount"] . ", '". $_POST["name"] . "' , " . $_POST["value"] . ");";
+           
+            
+             if(mysqli_query($con, $sql))
+            {
+                echo 'foi';
+            }
+            else
+            {
+                echo 'n foi';
+            }
            
             ?>
         </pre>
